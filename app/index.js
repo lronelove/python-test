@@ -17,6 +17,15 @@ app.get('/home', (req, res) => {
 	}
 	res.send(data)
 })
+app.get('/love', (req, res) => {
+	const username = req.query.username
+	const password = req.query.password
+
+	res.send({
+		username,
+		password
+	})
+})
 app.post('/test', urlencodedParser, (req, res) => {
 	const username = req.body.username || 0
 	const password = req.body.password || 0
